@@ -1,16 +1,16 @@
 
 const RHYME_API_BASE_URL = "https://rhymebrain.com/talk?function=getRhymes&word=";
 
-export function checkRhymeFromAPI(word) {
-  fetch(`${RHYME_API_BASE_URL}${word}`, {
+export function getRhymesFromAPI(rhyme, setPossibleRhymes) {
+  fetch(`${RHYME_API_BASE_URL}${rhyme}`, {
     headers: {
     },
   })
     .then((response) => {
-      return response.json();
+        return response.json();
     })
     .then((result) => {
-      console.log(result);
+        setPossibleRhymes(result);
     })
     .catch((err) => {
       console.error(err);

@@ -1,28 +1,78 @@
 import React, { useEffect, useState } from 'react';
-import { checkRhymeFromAPI } from "../../scripts/api"
+import { getRhymesFromAPI } from '../../scripts/api';
 
 const Rhyme = () => {
-  const [word, setWord] = useState("");
+  const [rapLines, setRapLines] = useState([
+    {
+      text: 'Wow you smell, the future must stink!',
+      rhyme: 'stink',
+    },
+    {
+      text: "I can't look at you, my eyes have taken all they can!",
+      rhyme: 'can',
+    },
+    {
+      text: 'Every word out your mouth is a moronic lie!',
+      rhyme: 'lie',
+    },
+  ]);
+  
+  const [line, setLine] = useState({
+    text: '',
+    rhyme: '',
+  });
 
-  function updateWord(e) {
-    e.preventDefault();
-    setWord(e.target[0].value);
-    console.log(word);
+  const [possibleRhymes, setPossibleRhymes] = useState([]);
+  const [lineCount, setLineCount] = useState(0);
+
+  useEffect(() => {
+    setRapLines(rapLines.sort(() => Math.random() - 0.5));
+    goToNextLine();
+  }, []);
+
+  function goToNextLine() {
+    if (lineCount < rapLines.length) {
+      setLine(rapLines[lineCount]);
+      setLineCount(lineCount + 1);
+    } else {
+      console.log("Go to next level")
+    }
   }
 
   useEffect(() => {
-    checkRhymeFromAPI(word);
-    console.log("Word was updated");
-  }, [word]);
+      getRhymesFromAPI(line.rhyme, setPossibleRhymes);
+  }, [line]);
 
-    return(
-      <section>
-        <h1>Rhyme Test</h1>
-        <form onSubmit={updateWord}>
-          <input type="text" id="word" name="word" />
-        </form>
-      </section>
-    )
-}
+  function checkRhyme(e) {
+    e.preventDefault();
+    const splitWords = e.target[0].value.split(" ");
+    const word = splitWords[splitWords.length - 1];
+    e.target[0].value = "";
+    let wordRhymes = false;
+
+    possibleRhymes.forEach((rhyme) => {
+      if (word === rhyme.word && word !== line.rhyme){
+        wordRhymes = true;
+      }
+    });
+
+    if (wordRhymes) {
+      console.log("Rhymes!");
+      goToNextLine();
+    } else {
+      console.log("Does not rhyme, restart");
+    }
+  }
+
+  return (
+    <section>
+      <h1>Rhyme Test</h1>
+      <p>{line.text}</p>
+      <form onSubmit={checkRhyme}>
+        <input type="text" id="word" name="word" />
+      </form>
+    </section>
+  );
+};
 
 export default Rhyme;
