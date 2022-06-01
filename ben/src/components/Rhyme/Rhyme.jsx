@@ -50,8 +50,10 @@ const Rhyme = () => {
     e.target[0].value = "";
     let wordRhymes = false;
 
+    console.log(word, " and ", line.rhyme);
+
     possibleRhymes.forEach((rhyme) => {
-      if (word === rhyme.word && word !== line.rhyme){
+      if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250){
         wordRhymes = true;
       }
     });
