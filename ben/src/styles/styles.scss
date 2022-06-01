@@ -1,0 +1,57 @@
+@import 'variables', 'Rhyme';
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    .level-container {
+        height: 100%;
+        width: 100%;
+        background-color: black; //Replaced with background video
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .rap-line {
+            height: 60px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: black; //Change to lighter shade
+            border-style: solid;
+            border: 5px solid white;
+            color: white;
+            padding: 10px;
+            //Increase font size
+            //Set pixel font
+        }
+        img {
+            height: 40%;
+            margin: 5% 0;
+        }
+        form {
+            height: 60px;
+            width: 80%;
+            input {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: black; //Change to lighter shade
+                border-style: solid;
+                border: 5px solid white;
+                color: white;
+                padding: 10px;
+                //Increase font size
+                //Set pixel font
+            }
+        }
+    }
+}

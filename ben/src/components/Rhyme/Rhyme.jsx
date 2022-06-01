@@ -16,7 +16,7 @@ const Rhyme = () => {
       rhyme: 'lie',
     },
   ]);
-  
+
   const [line, setLine] = useState({
     text: '',
     rhyme: '',
@@ -35,41 +35,41 @@ const Rhyme = () => {
       setLine(rapLines[lineCount]);
       setLineCount(lineCount + 1);
     } else {
-      console.log("Go to next level")
+      console.log('Go to next level');
     }
   }
 
   useEffect(() => {
-      getRhymesFromAPI(line.rhyme, setPossibleRhymes);
+    getRhymesFromAPI(line.rhyme, setPossibleRhymes);
   }, [line]);
 
   function checkRhyme(e) {
     e.preventDefault();
-    const splitWords = e.target[0].value.split(" ");
+    const splitWords = e.target[0].value.split(' ');
     const word = splitWords[splitWords.length - 1];
-    e.target[0].value = "";
+    e.target[0].value = '';
     let wordRhymes = false;
 
-    console.log(word, " and ", line.rhyme);
+    console.log(word, ' and ', line.rhyme);
 
     possibleRhymes.forEach((rhyme) => {
-      if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250){
+      if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250) {
         wordRhymes = true;
       }
     });
 
     if (wordRhymes) {
-      console.log("Rhymes!");
+      console.log('Rhymes!');
       goToNextLine();
     } else {
-      console.log("Does not rhyme, restart");
+      console.log('Does not rhyme, restart');
     }
   }
 
   return (
-    <section>
-      <h1>Rhyme Test</h1>
-      <p>{line.text}</p>
+    <section className="level-container">
+      <p className="rap-line">{line.text}</p>
+      <img src="https://m.media-amazon.com/images/M/MV5BZjk5MzMwMWUtNmMwYS00NzE0LWJiNzctMTYxODVkMWI0ZjQ4XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg" alt="King" />
       <form onSubmit={checkRhyme}>
         <input type="text" id="word" name="word" />
       </form>

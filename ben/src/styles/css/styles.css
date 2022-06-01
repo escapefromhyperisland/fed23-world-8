@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+main .level-container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .level-container .rap-line {
+  height: 60px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  border-style: solid;
+  border: 5px solid white;
+  color: white;
+  padding: 10px;
+}
+
+main .level-container img {
+  height: 40%;
+  margin: 5% 0;
+}
+
+main .level-container form {
+  height: 60px;
+  width: 80%;
+}
+
+main .level-container form input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  border-style: solid;
+  border: 5px solid white;
+  color: white;
+  padding: 10px;
+}
+/*# sourceMappingURL=styles.css.map */
