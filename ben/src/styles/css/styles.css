@@ -20,16 +20,17 @@ main .level-container {
 }
 
 main .level-container .rap-line {
-  height: 60px;
+  height: 80px;
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: black;
   border-style: solid;
-  border: 5px solid white;
+  border: 5px double white;
   color: white;
   padding: 10px;
+  font-size: 1.5rem;
 }
 
 main .level-container img {
@@ -38,7 +39,7 @@ main .level-container img {
 }
 
 main .level-container form {
-  height: 60px;
+  height: 80px;
   width: 80%;
 }
 
@@ -50,8 +51,9 @@ main .level-container form input {
   justify-content: center;
   background-color: black;
   border-style: solid;
-  border: 5px solid white;
+  border: 5px double white;
   color: white;
   padding: 10px;
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=styles.css.map */

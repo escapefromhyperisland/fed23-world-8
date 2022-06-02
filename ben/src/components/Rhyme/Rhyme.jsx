@@ -69,7 +69,7 @@ const Rhyme = () => {
   return (
     <section className="level-container">
       <p className="rap-line">{line.text}</p>
-      <img src="https://m.media-amazon.com/images/M/MV5BZjk5MzMwMWUtNmMwYS00NzE0LWJiNzctMTYxODVkMWI0ZjQ4XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg" alt="King" />
+      <img src="/assets/images/king.png" alt="King" />
       <form onSubmit={checkRhyme}>
         <input type="text" id="word" name="word" />
       </form>

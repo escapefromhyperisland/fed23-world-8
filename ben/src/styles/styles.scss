@@ -18,17 +18,17 @@ main {
         justify-content: center;
         align-items: center;
         .rap-line {
-            height: 60px;
+            height: 80px;
             width: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background-color: black; //Change to lighter shade
             border-style: solid;
-            border: 5px solid white;
+            border: 5px double white;
             color: white;
             padding: 10px;
-            //Increase font size
+            font-size: 1.5rem;
             //Set pixel font
         }
         img {
@@ -36,7 +36,7 @@ main {
             margin: 5% 0;
         }
         form {
-            height: 60px;
+            height: 80px;
             width: 80%;
             input {
                 width: 100%;
@@ -46,10 +46,10 @@ main {
                 justify-content: center;
                 background-color: black; //Change to lighter shade
                 border-style: solid;
-                border: 5px solid white;
+                border: 5px double white;
                 color: white;
                 padding: 10px;
-                //Increase font size
+                font-size: 1.5rem;
                 //Set pixel font
             }
         }
