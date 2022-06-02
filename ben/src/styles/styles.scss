@@ -24,7 +24,7 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: black; //Change to lighter shade
+            background-color: rgba(0, 0, 0, 0.75);
             border-style: solid;
             border: 5px double white;
             color: white;
@@ -46,7 +46,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background-color: black; //Change to lighter shade
+                background-color: rgba(0, 0, 0, 0.75);
                 border-style: solid;
                 border: 5px double white;
                 color: white;
