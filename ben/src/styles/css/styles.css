@@ -56,4 +56,33 @@ main .level-container form input {
   padding: 10px;
   font-size: 1.5rem;
 }
+
+main .story-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .story-container .story-text-box {
+  width: 60%;
+  height: 60%;
+  border: 5px double white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .story-container .story-text-box .story-text {
+  padding-top: 10rem;
+}
+
+main .story-container .story-text-box .continue-text {
+  padding-bottom: 3rem;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getRhymesFromAPI } from '../../scripts/api';
+import { useNavigate } from 'react-router-dom';
 
-const Rhyme = () => {
+const Rhyme = ( {setStoryInfo} ) => {
+  const navigate = useNavigate();
   const [rapLines, setRapLines] = useState([
     {
       text: 'Wow you smell, the future must stink!',
@@ -36,6 +38,8 @@ const Rhyme = () => {
       setLineCount(lineCount + 1);
     } else {
       console.log('Go to next level');
+      setStoryInfo({text: 'Dragon game success!', url: '/', index: 4});
+      navigate('/');
     }
   }
 
@@ -63,6 +67,8 @@ const Rhyme = () => {
       goToNextLine();
     } else {
       console.log('Does not rhyme, restart');
+      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
+      navigate('/')
     }
   }
 
