@@ -77,7 +77,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       <p className="rap-line">{line.text}</p>
       <img src="/assets/images/king.png" alt="King" />
       <form onSubmit={checkRhyme}>
-        <input type="text" id="word" name="word" />
+        <input type="text" autocomplete="off" autofocus="true" id="word" name="word" />
       </form>
     </section>
   );
