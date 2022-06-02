@@ -73,13 +73,15 @@ const Rhyme = ( {setStoryInfo} ) => {
   }
 
   return (
-    <section className="level-container">
-      <p className="rap-line">{line.text}</p>
-      <img src="/assets/images/king.png" alt="King" />
-      <form onSubmit={checkRhyme}>
-        <input type="text" autocomplete="off" autofocus="true" id="word" name="word" />
-      </form>
-    </section>
+    <div id="rhyme-bg">
+      <section className="level-container">
+        <p className="rap-line">{line.text}</p>
+        <img src="/assets/images/king.png" alt="King" />
+        <form onSubmit={checkRhyme}>
+          <input type="text" autoComplete="off" autoFocus={true} id="word" name="word" />
+        </form>
+      </section>
+    </div>
   );
 };
 

@@ -9,10 +9,11 @@
 main {
     height: 100vh;
     width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
     .level-container {
         height: 100%;
-        width: 100%;
-        background-color: black; //Replaced with background video
+        width: 100%; //Replaced with background video
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -34,6 +35,7 @@ main {
         img {
             height: 40%;
             margin: 5% 0;
+            transform: scaleX(-1);
         }
         form {
             height: 80px;
@@ -51,6 +53,9 @@ main {
                 padding: 10px;
                 font-size: 1.5rem;
                 //Set pixel font
+            }
+            input:focus {
+                outline: none;
             }
         }
     }
