@@ -26,6 +26,22 @@ const Rhyme = ( {setStoryInfo} ) => {
 
   const [possibleRhymes, setPossibleRhymes] = useState([]);
   const [lineCount, setLineCount] = useState(0);
+  const [counter, setCounter] = useState(20);
+
+  
+  console.log(counter);
+
+  useEffect(() => {
+    const timer =
+      counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
+    if (counter === -1){
+      console.log('Time up, restart');
+      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
+      navigate('/')
+    } else {
+      return () => clearInterval(timer);
+    }
+  }, [counter]);
 
   useEffect(() => {
     setRapLines(rapLines.sort(() => Math.random() - 0.5));
@@ -65,6 +81,7 @@ const Rhyme = ( {setStoryInfo} ) => {
     if (wordRhymes) {
       console.log('Rhymes!');
       goToNextLine();
+      setCounter(20);
     } else {
       console.log('Does not rhyme, restart');
       setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
@@ -72,11 +89,17 @@ const Rhyme = ( {setStoryInfo} ) => {
     }
   }
 
+  const counterStyle = (counter * 5) + '%';
+
   return (
     <div id="rhyme-bg">
       <section className="level-container">
         <p className="rap-line">{line.text}</p>
         <img src="/assets/images/king.png" alt="King" />
+        <div className="timer-container">
+          <div className="timer-bar" style={{width:counterStyle}}>
+          </div>
+        </div>
         <form onSubmit={checkRhyme}>
           <input type="text" autoComplete="off" autoFocus={true} id="word" name="word" />
         </form>

@@ -48,6 +48,26 @@ main .level-container img {
   transform: scaleX(-1);
 }
 
+main .level-container .timer-container {
+  width: 80%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 2px solid white;
+  padding: 2px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+main .level-container .timer-container .timer-bar {
+  height: 100%;
+  background-color: #c2c222;
+  transition: width 1s linear;
+}
+
 main .level-container form {
   height: 80px;
   width: 80%;
