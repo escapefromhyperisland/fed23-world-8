@@ -24,12 +24,9 @@ const Rhyme = ( {setStoryInfo} ) => {
     rhyme: '',
   });
 
-  const [possibleRhymes, setPossibleRhymes] = useState([]);
+  const [possibleRhymes, setPossibleRhymes] = useState();
   const [lineCount, setLineCount] = useState(0);
   const [counter, setCounter] = useState(20);
-
-  
-  console.log(counter);
 
   useEffect(() => {
     const timer =
@@ -63,6 +60,15 @@ const Rhyme = ( {setStoryInfo} ) => {
     getRhymesFromAPI(line.rhyme, setPossibleRhymes);
   }, [line]);
 
+
+  useEffect(() => {
+    console.log(possibleRhymes)
+  }, [possibleRhymes]);
+
+
+
+
+
   function checkRhyme(e) {
     e.preventDefault();
     const splitWords = e.target[0].value.split(' ');
@@ -71,6 +77,7 @@ const Rhyme = ( {setStoryInfo} ) => {
     let wordRhymes = false;
 
     console.log(word, ' and ', line.rhyme);
+    
 
     possibleRhymes.forEach((rhyme) => {
       if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250) {
