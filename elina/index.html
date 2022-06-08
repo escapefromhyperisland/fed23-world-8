@@ -7,8 +7,23 @@
     
   </head>
   <body>
+    <script>
+      AFRAME.registerComponent('roots', {
+        schema: {default: ""},
+
+        init: function () { 
+          var sceneEl = document.querySelector('a-scene');
+          let roots = sceneEl.querySelector('#roots');
+          console.log(this);
+
+          this.el.addEventListener("click", (event) => {
+            alert("clicked");
+          });
+        }
+      });
+    </script>
     
-    <a-scene>
+    <a-scene cursor="rayOrigin:mouse">
       <!--First-->
       <a-gltf-model src="./assets/Sofa1.glb" position="11.5 0 -2" rotation="0 270 0" scale="1.2 1.2 1.2"></a-gltf-model>
       <a-gltf-model src="./assets/Sofa1.glb" position="11.5 0 1.9" rotation="0 90 0" scale="1.2 1.2 1.2"></a-gltf-model>
@@ -49,7 +64,7 @@
       <a-gltf-model src="./assets/HIst.glb" position="-2.7 1.3 1.6" scale=".1 .1 .1" rotation="0 0 270"></a-gltf-model> 
       <!--Reception-->
       <a-gltf-model src="./assets/reception.glb" position="2.7 -.05 -1.1" scale=".4 .4 .4" rotation="0 90 0"  ></a-gltf-model> 
-      <a-gltf-model src="./assets/roots.glb" position="7 -.05 -1.7" scale=".35 .35 .35" id="roots"  ></a-gltf-model> 
+      <a-gltf-model src="./assets/roots.glb" position="7 -.05 -1.7" scale=".35 .35 .35" id="roots" roots ></a-gltf-model> 
       <!--Plants-->
       <a-gltf-model src="./assets/plant.glb" position="11 0 6.5" scale="4 4 4"></a-gltf-model> 
       <a-gltf-model src="./assets/plant.glb" position="-3.3 0 -4" scale="4 4 4"></a-gltf-model> 
@@ -103,23 +118,7 @@
     <script src="./script/script.js"></script>
 
 
-    <script>
-      AFRAME.registerComponent('log', {
-      schema: {type: 'string'},
-
-      init: function () {
-        var sceneEl = document.querySelector('a-scene');
-        let roots = sceneEl.querySelector('#roots');
-        console.log(roots);
-
-        
-        function consoleLog() {
-          console.log("clicked on roots")
-        }
-        roots.addEventListener("click", consoleLog);
-      }()
-      });
-    </script>
+   
     
   </body>
 </html>
