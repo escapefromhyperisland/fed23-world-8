@@ -2,15 +2,23 @@
   height: 100%;
   width: 100%;
   background-image: url("http://localhost:3000/assets/images/castlebg.jpg");
-  background-size: contain;
+  background-size: cover;
   background-color: black;
 }
 
 #pattern-bg {
   height: 100%;
   width: 100%;
-  background-image: url("http://localhost:3000/assets/images/castlebg.jpg");
-  background-size: contain;
+  background-image: url("http://localhost:3000/assets/images/skybg.jpg");
+  background-size: cover;
+  background-color: black;
+}
+
+#anagram-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url("http://localhost:3000/assets/images/sunsetbg.jpg");
+  background-size: cover;
   background-color: black;
 }
 
