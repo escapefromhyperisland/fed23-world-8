@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getRhymesFromAPI } from '../../scripts/api';
 import { useNavigate } from 'react-router-dom';
 
-const Rhyme = ( {setStoryInfo} ) => {
+const Rhyme = ( {storyInfo, setStoryInfo} ) => {
   const navigate = useNavigate();
   const [rapLines, setRapLines] = useState([
     {
@@ -19,10 +19,12 @@ const Rhyme = ( {setStoryInfo} ) => {
     },
   ]);
 
-  const [line, setLine] = useState({
-    text: '',
-    rhyme: '',
-  });
+  const [line, setLine] = useState();
+
+  useEffect(() => {
+    setRapLines(rapLines.sort(() => Math.random() - 0.5));
+    goToNextLine();
+  }, []);
 
   const [possibleRhymes, setPossibleRhymes] = useState();
   const [lineCount, setLineCount] = useState(0);
@@ -40,11 +42,6 @@ const Rhyme = ( {setStoryInfo} ) => {
     }
   }, [counter]);
 
-  useEffect(() => {
-    setRapLines(rapLines.sort(() => Math.random() - 0.5));
-    goToNextLine();
-  }, []);
-
   function goToNextLine() {
     if (lineCount < rapLines.length) {
       setLine(rapLines[lineCount]);
@@ -57,7 +54,10 @@ const Rhyme = ( {setStoryInfo} ) => {
   }
 
   useEffect(() => {
-    getRhymesFromAPI(line.rhyme, setPossibleRhymes);
+    console.log(line);
+    if (line){
+      getRhymesFromAPI(line.rhyme, setPossibleRhymes);
+    }
   }, [line]);
 
   useEffect(() => {
@@ -73,6 +73,7 @@ const Rhyme = ( {setStoryInfo} ) => {
 
     console.log(word, ' and ', line.rhyme);
     
+    console.log(possibleRhymes)
     possibleRhymes.forEach((rhyme) => {
       if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250) {
         wordRhymes = true;
@@ -95,7 +96,7 @@ const Rhyme = ( {setStoryInfo} ) => {
   return (
     <div id="rhyme-bg">
       <section className="level-container">
-        <p className="rap-line">{line.text}</p>
+        {line && <p className="rap-line">{line.text}</p>}
         <img src="/assets/images/king.png" alt="King" />
         <div className="timer-container">
           <div className="timer-bar" style={{width:counterStyle}}>
