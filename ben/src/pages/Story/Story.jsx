@@ -21,7 +21,7 @@ const Story = ({ storyInfo, setStoryInfo }) => {
     } else if (storyInfo.index === 10) {//Wizard Success
       setStoryInfo({text: "The game has been completed", index: 11});
     } else if (storyInfo.index === 11) {
-      navigate('link to next game');
+      window.parent.postMessage('nextLevel');
     }
   }
 
