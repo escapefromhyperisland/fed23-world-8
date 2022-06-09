@@ -33,7 +33,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
     if (counter === -1){
       console.log('Time up, restart');
-      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'Rhyme game fail. Try again?', url: '/', index: 3});
       navigate('/')
     } else {
       return () => clearInterval(timer);
@@ -51,7 +51,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       setLineCount(lineCount + 1);
     } else {
       console.log('Go to next level');
-      setStoryInfo({text: 'Dragon game success!', url: '/', index: 4});
+      setStoryInfo({text: 'Rhyme game success!', url: '/', index: 7});
       navigate('/');
     }
   }
@@ -60,19 +60,14 @@ const Rhyme = ( {setStoryInfo} ) => {
     getRhymesFromAPI(line.rhyme, setPossibleRhymes);
   }, [line]);
 
-
   useEffect(() => {
     console.log(possibleRhymes)
   }, [possibleRhymes]);
 
-
-
-
-
   function checkRhyme(e) {
     e.preventDefault();
     const splitWords = e.target[0].value.split(' ');
-    const word = splitWords[splitWords.length - 1];
+    const word = splitWords[splitWords.length - 1].replace(/[.,\/#!?$%\^&\*;:{}=\-_`~()]/g,"");
     e.target[0].value = '';
     let wordRhymes = false;
 
@@ -91,7 +86,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       setCounter(20);
     } else {
       console.log('Does not rhyme, restart');
-      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'King game fail. Try again?', url: '/', index: 6});
       navigate('/')
     }
   }
