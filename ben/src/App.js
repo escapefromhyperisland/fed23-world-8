@@ -11,7 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Story storyInfo={storyInfo} setStoryInfo={setStoryInfo} />} />
           <Route path="/pattern" element={<Pattern setStoryInfo={setStoryInfo} />} />
-          <Route path="/rhyme" element={<Rhyme setStoryInfo={setStoryInfo} />} />
+          <Route path="/rhyme" element={<Rhyme storyInfo={storyInfo} setStoryInfo={setStoryInfo} />} />
           <Route path="/anagram" element={<Anagram setStoryInfo={setStoryInfo} />} />
         </Routes>
       </BrowserRouter>
