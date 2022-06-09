@@ -33,7 +33,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
     if (counter === -1){
       console.log('Time up, restart');
-      setStoryInfo({text: 'Rhyme game fail. Try again?', url: '/', index: 6});
+      setStoryInfo({text: 'Rhyme game fail. Try again?', index: 6});
       navigate('/')
     } else {
       return () => clearInterval(timer);
@@ -51,7 +51,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       setLineCount(lineCount + 1);
     } else {
       console.log('Go to next level');
-      setStoryInfo({text: 'Rhyme game success!', url: '/', index: 7});
+      setStoryInfo({text: 'Rhyme game success!', index: 7});
       navigate('/');
     }
   }
@@ -85,7 +85,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       setCounter(20);
     } else {
       console.log('Does not rhyme, restart');
-      setStoryInfo({text: 'King game fail. Try again?', url: '/', index: 6});
+      setStoryInfo({text: 'King game fail. Try again?', index: 6});
       navigate('/')
     }
   }

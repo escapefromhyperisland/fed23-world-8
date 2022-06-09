@@ -19,19 +19,6 @@ const Pattern = ( {setStoryInfo} ) => {
   ]);
 
   const [counter, setCounter] = useState(20);
-
-  useEffect(() => {
-    const timer =
-      counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
-    if (counter === -1){
-      console.log('Time up, restart');
-      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
-      navigate('/')
-    } else {
-      return () => clearInterval(timer);
-    }
-  }, [counter]);
-
   const [lineCount, setLineCount] = useState(0);
   const [line, setLine] = useState({
     text: '',
@@ -43,7 +30,7 @@ const Pattern = ( {setStoryInfo} ) => {
       counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
     if (counter === -1){
       console.log('Time up, restart');
-      setStoryInfo({text: 'Pattern game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'Pattern game fail. Try again?', index: 3});
       navigate('/')
     } else {
       return () => clearInterval(timer);
@@ -61,7 +48,7 @@ const Pattern = ( {setStoryInfo} ) => {
       setLineCount(lineCount + 1);
     } else {
       console.log('Go to next level');
-      setStoryInfo({text: 'Pattern game success!', url: '/', index: 4});
+      setStoryInfo({text: 'Pattern game success!', index: 4});
       navigate('/');
     }
   }
@@ -78,7 +65,7 @@ const Pattern = ( {setStoryInfo} ) => {
       setCounter(20);
     } else {
       console.log('Incorrect, restart');
-      setStoryInfo({text: 'Dragon game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'Dragon game fail. Try again?', index: 3});
       navigate('/')
     }
   }
