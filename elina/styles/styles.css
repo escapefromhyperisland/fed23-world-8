@@ -1,5 +1,9 @@
-header > div {
-  height: 50px;
-  width: 100%;
-  color: red;
+ul {
+  list-style-type: none;
+}
+p {
+  font-size: 18px;
+}
+h1 {
+  font-size: 8px;
 }

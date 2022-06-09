@@ -1,7 +1,18 @@
 let localSt = window.localStorage;
-let bag = ["loo", "scs"];
-localSt.bag = bag;
-console.log(localStorage.bag);
+let bag = ["coffee"];
+
+//clear local storage
+AFRAME.registerComponent("storage", {
+  schema: { default: "" },
+
+  init: function () {
+    this.el.addEventListener("click", function (event) {
+      localSt.clear();
+      alert(localSt, "flags clicked");
+    });
+  },
+});
+
 //Reception
 AFRAME.registerComponent("reception", {
   schema: { default: "" },
@@ -110,14 +121,14 @@ AFRAME.registerComponent("try", {
           function setTrue() {
             localSt.question = 4;
             bag.push("coffee");
-            console.log("Now you have coffee!");
+            console.log("Now you have coffee!", bag);
             let result2 = confirm(
               "Thank you! Here is a free coffee for you! Do you want a receipt? "
             );
             let message2 = result2 ? setTrueReceipt() : setFalseReceipt();
             function setTrueReceipt() {
               bag.push("receipt");
-              console.log("Now you have receipt!");
+              console.log("Now you have receipt!", bag);
             }
             function setFalseReceipt() {
               console.log("Nothing!");
@@ -130,6 +141,7 @@ AFRAME.registerComponent("try", {
             );
           }
         }
+        addStorageBag();
       } catch (ex) {
         alert(
           "An error occurred and I need to write some code to handle this!"
@@ -138,3 +150,10 @@ AFRAME.registerComponent("try", {
     });
   },
 });
+console.log("end", bag);
+function addStorageBag() {
+  bag.forEach((element, i) => {
+    localSt.setItem([i], element);
+    console.log(localSt, "localSt");
+  });
+}

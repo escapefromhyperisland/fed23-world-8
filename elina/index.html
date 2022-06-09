@@ -4,15 +4,20 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@6.1.0/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://unpkg.com/three@0.124.0/examples/js/libs/inflate.min.js"></script>
+    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
 
   <body>
     <script src="./script/script.js"></script>
-    <header>
-      <div id="bag"></div>
-    </header>
+
     <a-scene cursor="rayOrigin:mouse">
+      <a-entity htmlembed position="3 2 -5.8" bag id="myText">
+        <ul id="bag">
+          <h1>Your bag:</h1>
+        </ul>
+      </a-entity>
       <!--First-->
       <a-gltf-model
         src="./assets/Sofa1.glb"
@@ -316,6 +321,7 @@
         rotation="0 260 0"
       ></a-gltf-model>
       <a-gltf-model
+        storage
         src="./assets/flag.glb"
         position="25 1 -2"
         scale=".5 .5 .5"
@@ -341,15 +347,15 @@
         position="20 1 2"
         scale=".4 .4 .4"
       ></a-gltf-model>
-      <a-entity
+      <!-- <a-entity
         light="type: ambient; color: #fcf0d4"
         position="18 -0.7 -2"
-      ></a-entity>
+      ></a-entity> -->
       <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
-      <a-entity
+      <!-- <a-entity
         light="type: directional; color: #FFF; intensity: 0.6"
         position="-0.5 1 1"
-      ></a-entity>
+      ></a-entity> -->
 
       <!--Columns-->
       <a-box
