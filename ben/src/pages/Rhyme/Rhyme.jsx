@@ -33,7 +33,7 @@ const Rhyme = ( {setStoryInfo} ) => {
       counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
     if (counter === -1){
       console.log('Time up, restart');
-      setStoryInfo({text: 'Rhyme game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'Rhyme game fail. Try again?', url: '/', index: 6});
       navigate('/')
     } else {
       return () => clearInterval(timer);
@@ -73,7 +73,6 @@ const Rhyme = ( {setStoryInfo} ) => {
 
     console.log(word, ' and ', line.rhyme);
     
-
     possibleRhymes.forEach((rhyme) => {
       if (word === rhyme.word && word !== line.rhyme && rhyme.score > 250) {
         wordRhymes = true;
