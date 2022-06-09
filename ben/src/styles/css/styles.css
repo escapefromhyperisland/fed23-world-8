@@ -1,0 +1,123 @@
+#rhyme-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url("http://localhost:3000/assets/images/castlebg.jpg");
+  background-size: contain;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+main .level-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .level-container .rap-line {
+  height: 80px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border: 5px double white;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+main .level-container img {
+  height: 40%;
+  margin: 5% 0;
+  transform: scaleX(-1);
+}
+
+main .level-container .timer-container {
+  width: 80%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 2px solid white;
+  padding: 2px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+main .level-container .timer-container .timer-bar {
+  height: 100%;
+  background-color: #c2c222;
+  transition: width 1s linear;
+}
+
+main .level-container form {
+  height: 80px;
+  width: 80%;
+}
+
+main .level-container form input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border: 5px double white;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+main .level-container form input:focus {
+  outline: none;
+}
+
+main .story-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .story-container .story-text-box {
+  width: 60%;
+  height: 60%;
+  border: 5px double white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .story-container .story-text-box .story-text {
+  padding: 10rem 2rem 0 2rem;
+  text-align: justify;
+}
+
+main .story-container .story-text-box .continue-text {
+  padding-bottom: 3rem;
+}
+/*# sourceMappingURL=styles.css.map */
