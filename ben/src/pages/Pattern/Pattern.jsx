@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const QuickMath = ( {setStoryInfo} ) => {
+const Pattern = ( {setStoryInfo} ) => {
   const navigate = useNavigate();
   const [patterns, setPatterns] = useState([
     {
@@ -43,7 +43,7 @@ const QuickMath = ( {setStoryInfo} ) => {
       counter > -1 && setInterval(() => setCounter(counter - 1), 1000);
     if (counter === -1){
       console.log('Time up, restart');
-      setStoryInfo({text: 'Math game fail. Try again?', url: '/', index: 3});
+      setStoryInfo({text: 'Pattern game fail. Try again?', url: '/', index: 3});
       navigate('/')
     } else {
       return () => clearInterval(timer);
@@ -61,7 +61,7 @@ const QuickMath = ( {setStoryInfo} ) => {
       setLineCount(lineCount + 1);
     } else {
       console.log('Go to next level');
-      setStoryInfo({text: 'Math game success!', url: '/', index: 4});
+      setStoryInfo({text: 'Pattern game success!', url: '/', index: 4});
       navigate('/');
     }
   }
@@ -86,7 +86,7 @@ const QuickMath = ( {setStoryInfo} ) => {
   const counterStyle = (counter * 5) + '%';
 
   return (
-    <div id="quickmath-bg">
+    <div id="pattern-bg">
       <section className="level-container">
         <p className="rap-line">{line.text}</p>
         <img src="/assets/images/dragon.png" alt="Dragon" />
@@ -102,4 +102,4 @@ const QuickMath = ( {setStoryInfo} ) => {
   );
 };
 
-export default QuickMath;
+export default Pattern;
