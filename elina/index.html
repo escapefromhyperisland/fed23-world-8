@@ -4,121 +4,425 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@6.1.0/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://unpkg.com/three@0.124.0/examples/js/libs/inflate.min.js"></script>
-    
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
+
   <body>
-    <script>
-      AFRAME.registerComponent('roots', {
-        schema: {default: ""},
-
-        init: function () { 
-          var sceneEl = document.querySelector('a-scene');
-          let roots = sceneEl.querySelector('#roots');
-          console.log(this);
-
-          this.el.addEventListener("click", (event) => {
-            alert("clicked");
-          });
-        }
-      });
-    </script>
-    
+    <script src="./script/script.js"></script>
+    <header>
+      <div id="bag"></div>
+    </header>
     <a-scene cursor="rayOrigin:mouse">
       <!--First-->
-      <a-gltf-model src="./assets/Sofa1.glb" position="11.5 0 -2" rotation="0 270 0" scale="1.2 1.2 1.2"></a-gltf-model>
-      <a-gltf-model src="./assets/Sofa1.glb" position="11.5 0 1.9" rotation="0 90 0" scale="1.2 1.2 1.2"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="11.5 0 -2"
+        rotation="0 270 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="11.5 0 1.9"
+        rotation="0 90 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
       <!--Second-->
-      <a-gltf-model src="./assets/Sofa1.glb" position="14 0 -2" rotation="0 360 0" scale="1.2 1.2 1.2"></a-gltf-model>
-      <a-gltf-model src="./assets/Sofa1.glb" position="14 0 1.5" rotation="0 360 0" scale="1.2 1.2 1.2"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="14 0 -2"
+        rotation="0 360 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="14 0 1.5"
+        rotation="0 360 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
       <!--Third-->
-      <a-gltf-model src="./assets/Sofa1.glb" position="17 0 -2" rotation="0 180 0" scale="1.2 1.2 1.2"></a-gltf-model>
-      <a-gltf-model src="./assets/Sofa1.glb" position="17 0 1.5" rotation="0 180 0" scale="1.2 1.2 1.2"></a-gltf-model>
-      <a-gltf-model src="./assets/armchair.glb" position="15.8 0.2 1" scale="1.5 1.5 1.5"></a-gltf-model>
-      <a-gltf-model src="./assets/armchair.glb" position="18.5 0.2 -1" scale="1.5 1.5 1.5"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="17 0 -2"
+        rotation="0 180 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="17 0 1.5"
+        rotation="0 180 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/armchair.glb"
+        position="15.8 0.2 1"
+        scale="1.5 1.5 1.5"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/armchair.glb"
+        position="18.5 0.2 -1"
+        scale="1.5 1.5 1.5"
+      ></a-gltf-model>
       <!--Forth-->
-      <a-gltf-model src="./assets/Sofa1.glb" position="21 0 -2" rotation="0 270 0" scale="1.2 1.2 1.2"></a-gltf-model>
-      <a-gltf-model src="./assets/Sofa1.glb" position="21 0 1.5" rotation="0 90 0" scale="1.2 1.2 1.2"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="21 0 -2"
+        rotation="0 270 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/Sofa1.glb"
+        position="21 0 1.5"
+        rotation="0 90 0"
+        scale="1.2 1.2 1.2"
+      ></a-gltf-model>
       <!--Tables-->
-      <a-gltf-model src="./assets/roundTableWhite.glb" position="15.2 .1 -1"></a-gltf-model> 
-      <a-gltf-model src="./assets/roundTableYellow.glb" position="15.8 .1 -2"></a-gltf-model> 
-      <a-gltf-model src="./assets/roundTableWhite.glb" position="15.4 .1 2"></a-gltf-model> 
-      <a-gltf-model src="./assets/roundTableWhite.glb" position="21 .1 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/sqTable.glb" position="6 .1 4.9"></a-gltf-model> 
-      <a-gltf-model src="./assets/sqTable.glb" position="13 .1 4.8"></a-gltf-model> 
-      <a-gltf-model src="./assets/sqTable.glb" position="19 .1 4.9"></a-gltf-model> 
-      <a-gltf-model src="./assets/sqTable.glb" position="23 .1 4.9"></a-gltf-model> 
-      <a-gltf-model src="./assets/sqTable.glb" position="-2.5 0 -1.7"></a-gltf-model> 
+      <a-gltf-model
+        src="./assets/roundTableWhite.glb"
+        position="15.2 .1 -1"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/roundTableYellow.glb"
+        position="15.8 .1 -2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/roundTableWhite.glb"
+        position="15.4 .1 2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/roundTableWhite.glb"
+        position="21 .1 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sqTable.glb"
+        position="6 .1 4.9"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sqTable.glb"
+        position="13 .1 4.8"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sqTable.glb"
+        position="19 .1 4.9"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sqTable.glb"
+        position="23 .1 4.9"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sqTable.glb"
+        position="-2.5 0 -1.7"
+      ></a-gltf-model>
       <!--Doors-->
-      <a-gltf-model src="./assets/doors.glb" position="-1 0 5.8" rotation="0 180 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="-2.8 0 4.4" rotation="0 90 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="-1 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position=".8 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="7 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="15 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="17 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="19 0 -5.8" rotation="0 0 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/doors.glb" position="21 0 -5.8" rotation="0 0 0"></a-gltf-model>
-      <a-gltf-model src="./assets/doors.glb" position="26.8 0 -4.3" rotation="0 270 0"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="-1 0 5.8"
+        rotation="0 180 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="-2.8 0 4.4"
+        rotation="0 90 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="-1 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position=".8 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="7 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="15 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="17 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="19 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="21 0 -5.8"
+        rotation="0 0 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/doors.glb"
+        position="26.8 0 -4.3"
+        rotation="0 270 0"
+      ></a-gltf-model>
       <!--HI-->
-      <a-gltf-model src="./assets/HI.glb" position="26.8 -.8 3" scale=".2 .2 .2" rotation="0 90 0"></a-gltf-model> 
-      <a-gltf-model src="./assets/HIst.glb" position="-2.7 1.3 1.6" scale=".1 .1 .1" rotation="0 0 270"></a-gltf-model> 
+      <a-gltf-model
+        src="./assets/HI.glb"
+        position="26.8 -.8 3"
+        scale=".2 .2 .2"
+        rotation="0 90 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/HIst.glb"
+        position="-2.7 1.3 1.6"
+        scale=".1 .1 .1"
+        rotation="0 0 270"
+        student
+      ></a-gltf-model>
       <!--Reception-->
-      <a-gltf-model src="./assets/reception.glb" position="2.7 -.05 -1.1" scale=".4 .4 .4" rotation="0 90 0"  ></a-gltf-model> 
-      <a-gltf-model src="./assets/roots.glb" position="7 -.05 -1.7" scale=".35 .35 .35" id="roots" roots ></a-gltf-model> 
+      <a-gltf-model
+        src="./assets/reception.glb"
+        position="2.7 -.05 -1.1"
+        scale=".4 .4 .4"
+        rotation="0 90 0"
+        reception
+      >
+      </a-gltf-model>
+      <a-gltf-model
+        src="./assets/roots.glb"
+        position="7 -.05 -1.7"
+        scale=".35 .35 .35"
+        id="roots"
+        roots
+        try
+      ></a-gltf-model>
       <!--Plants-->
-      <a-gltf-model src="./assets/plant.glb" position="11 0 6.5" scale="4 4 4"></a-gltf-model> 
-      <a-gltf-model src="./assets/plant.glb" position="-3.3 0 -4" scale="4 4 4"></a-gltf-model> 
-      <a-gltf-model src="./assets/plant.glb" position="-3.3 0 4" scale="4 4 4"></a-gltf-model> 
+      <a-gltf-model
+        src="./assets/plant.glb"
+        position="11 0 6.5"
+        scale="4 4 4"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/plant.glb"
+        position="-3.3 0 -4"
+        scale="4 4 4"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/plant.glb"
+        position="-3.3 0 4"
+        scale="4 4 4"
+      ></a-gltf-model>
       <!--SideChairs-->
-      <a-gltf-model src="./assets/sidechair.glb" position="3 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-gltf-model src="./assets/sidechair.glb" position="6 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-gltf-model src="./assets/sidechair.glb" position="10 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-gltf-model src="./assets/sidechair.glb" position="14 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-gltf-model src="./assets/sidechair.glb" position="18 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-gltf-model src="./assets/sidechair.glb" position="22 0 5" scale=".6 .6 .6" rotation="0 270 0"></a-gltf-model>
-      <a-box position="8.8 1.5 5.8" class="column"  scale=".9 3 .4" color="#918e81"></a-box>
-      <a-box position="12.8 1.5 5.8" class="column"  scale=".9 3 .4" color="#918e81"></a-box>
-      <a-box position="16.8 1.5 5.8" class="column"  scale=".9 3 .4" color="#918e81"></a-box>
-      <a-box position="20.8 1.5 5.8" class="column"  scale=".9 3 .4" color="#918e81"></a-box>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="3 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="6 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="10 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="14 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="18 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/sidechair.glb"
+        position="22 0 5"
+        scale=".6 .6 .6"
+        rotation="0 270 0"
+      ></a-gltf-model>
+      <a-box
+        position="8.8 1.5 5.8"
+        class="column"
+        scale=".9 3 .4"
+        color="#918e81"
+      ></a-box>
+      <a-box
+        position="12.8 1.5 5.8"
+        class="column"
+        scale=".9 3 .4"
+        color="#918e81"
+      ></a-box>
+      <a-box
+        position="16.8 1.5 5.8"
+        class="column"
+        scale=".9 3 .4"
+        color="#918e81"
+      ></a-box>
+      <a-box
+        position="20.8 1.5 5.8"
+        class="column"
+        scale=".9 3 .4"
+        color="#918e81"
+      ></a-box>
       <!--Benches-->
-      <a-gltf-model src="./assets/bench.glb" position="-2.7 0 -3" rotation="0 180 0" scale=".3 .3 .3"></a-gltf-model>
-      <a-gltf-model src="./assets/bench.glb" position="-2.7 0 0" rotation="0 180 0" scale=".3 .3 .3"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/bench.glb"
+        position="-2.7 0 -3"
+        rotation="0 180 0"
+        scale=".3 .3 .3"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/bench.glb"
+        position="-2.7 0 0"
+        rotation="0 180 0"
+        scale=".3 .3 .3"
+      ></a-gltf-model>
       <!--Flags-->
-      <a-gltf-model src="./assets/flag.glb" position="13 2 -1" scale=".5 .5 .5" rotation="0 30 0"></a-gltf-model>
-      <a-gltf-model src="./assets/flag.glb" position="3 2 -3" scale=".5 .5 .5" rotation="0 45 0"></a-gltf-model>
-      <a-gltf-model src="./assets/flag.glb" position="9 2 -3.5" scale=".5 .5 .5" rotation="0 86 0"></a-gltf-model>
-      <a-gltf-model src="./assets/flag.glb" position="0 2 -2" scale=".5 .5 .5" rotation="0 198 0"></a-gltf-model>
-      <a-gltf-model src="./assets/flag.glb" position="-2 2 0" scale=".5 .5 .5" rotation="0 260 0"></a-gltf-model>
-      <a-gltf-model src="./assets/flag.glb" position="25 1 -2" scale=".5 .5 .5" rotation="0 90 19"></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="13 2 -1"
+        scale=".5 .5 .5"
+        rotation="0 30 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="3 2 -3"
+        scale=".5 .5 .5"
+        rotation="0 45 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="9 2 -3.5"
+        scale=".5 .5 .5"
+        rotation="0 86 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="0 2 -2"
+        scale=".5 .5 .5"
+        rotation="0 198 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="-2 2 0"
+        scale=".5 .5 .5"
+        rotation="0 260 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/flag.glb"
+        position="25 1 -2"
+        scale=".5 .5 .5"
+        rotation="0 90 19"
+      ></a-gltf-model>
       <!--Lamps-->
-      <a-gltf-model src="./assets/lampfloor.glb" position="18.3 -0.7 -2"></a-gltf-model>
-      <a-gltf-model src="./assets/lamp.glb" position="15 1.5 -2" scale=".4 .4 .4"></a-gltf-model>
-      <a-gltf-model src="./assets/lamp.glb" position="11 1 -1" scale=".4 .4 .4"></a-gltf-model>
-      <a-gltf-model src="./assets/lamp.glb" position="20 1 2" scale=".4 .4 .4"></a-gltf-model>
-      <a-entity light="type: ambient; color: #fcf0d4" position="18 -0.7 -2"></a-entity>
+      <a-gltf-model
+        src="./assets/lampfloor.glb"
+        position="18.3 -0.7 -2"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/lamp.glb"
+        position="15 1.5 -2"
+        scale=".4 .4 .4"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/lamp.glb"
+        position="11 1 -1"
+        scale=".4 .4 .4"
+      ></a-gltf-model>
+      <a-gltf-model
+        src="./assets/lamp.glb"
+        position="20 1 2"
+        scale=".4 .4 .4"
+      ></a-gltf-model>
+      <a-entity
+        light="type: ambient; color: #fcf0d4"
+        position="18 -0.7 -2"
+      ></a-entity>
       <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
-<a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
-      
+      <a-entity
+        light="type: directional; color: #FFF; intensity: 0.6"
+        position="-0.5 1 1"
+      ></a-entity>
+
       <!--Columns-->
-      <a-box position="5 1 -3" class="column"  scale=".4 4 .4" color="#918e81"></a-box>
-      <a-box position="11 1 -3" class="column"  scale=".4 4 .4" color="#918e81"></a-box>
-      <a-box position="17.9 1 -3" class="column"  scale=".4 4 .4" color="#918e81"></a-box>
+      <a-box
+        position="5 1 -3"
+        class="column"
+        scale=".4 4 .4"
+        color="#918e81"
+      ></a-box>
+      <a-box
+        position="11 1 -3"
+        class="column"
+        scale=".4 4 .4"
+        color="#918e81"
+      ></a-box>
+      <a-box
+        position="17.9 1 -3"
+        class="column"
+        scale=".4 4 .4"
+        color="#918e81"
+      ></a-box>
       <!--Walls-->
-      <a-box position="12 1.5 -6" class="wall" rotation="0 -90 0" scale="0.05 3 30" src="./assets/wall.jpeg"></a-box>
-      <a-box position="12 1.5 6" class="wall" rotation="0 -90 0" scale="0.05 3 30" src="./assets/wall.jpeg"></a-box>
-      <a-box position="27 1.5 0" class="wall" scale="0.05 3 12" src="./assets/wall.jpeg"></a-box>
-      <a-box position="-3 1.5 0" class="wall" scale="0.05 3 12" src="./assets/wall.jpeg"></a-box>
+      <a-box
+        position="12 1.5 -6"
+        class="wall"
+        rotation="0 -90 0"
+        scale="0.05 3 30"
+        src="./assets/wall.jpeg"
+      ></a-box>
+      <a-box
+        position="12 1.5 6"
+        class="wall"
+        rotation="0 -90 0"
+        scale="0.05 3 30"
+        src="./assets/wall.jpeg"
+      ></a-box>
+      <a-box
+        position="27 1.5 0"
+        class="wall"
+        scale="0.05 3 12"
+        src="./assets/wall.jpeg"
+      ></a-box>
+      <a-box
+        position="-3 1.5 0"
+        class="wall"
+        scale="0.05 3 12"
+        src="./assets/wall.jpeg"
+      ></a-box>
 
-
-      <a-box position="-1 0 -.5" class="carpet" rotation="0 90 0" scale="8 .02 2" color="#faf8f0" src="./assets/grass.jpg"></a-box>
-      <a-box position="18 0 -.5" class="carpet" rotation="270 0 0" scale="15 6 .05" color="#faf8f0" src="./assets/grass.jpg"></a-box>
-      <a-plane position="12 0 0" rotation="-90 0 0" scale="30 12 1" src="./assets/floor.jpg"></a-plane>
+      <!--Floor-->
+      <a-box
+        position="-1 0 -.5"
+        class="carpet"
+        rotation="0 90 0"
+        scale="8 .02 2"
+        color="#faf8f0"
+        src="./assets/grass.jpg"
+      ></a-box>
+      <a-box
+        position="18 0 -.5"
+        class="carpet"
+        rotation="270 0 0"
+        scale="15 6 .05"
+        color="#faf8f0"
+        src="./assets/grass.jpg"
+      ></a-box>
+      <a-plane
+        position="12 0 0"
+        rotation="-90 0 0"
+        scale="30 12 1"
+        src="./assets/floor.jpg"
+      ></a-plane>
       <a-sky color="#fcf"></a-sky>
+      <script src="./script/bag.js"></script>
     </a-scene>
-    <script src="./script/script.js"></script>
-
-
-   
-    
   </body>
 </html>
