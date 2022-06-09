@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Story = ({ storyInfo, setStoryInfo }) => {
@@ -9,18 +9,18 @@ const Story = ({ storyInfo, setStoryInfo }) => {
       setStoryInfo({text: "Holy crap, there's a dragon on the roof!", index: 2});
       navigate('/');
     } else if (storyInfo.index === 2 || storyInfo.index === 3) {//Dragon intro or dragon fail
-      navigate('/quickmath');
+      navigate('/pattern');
     } else if (storyInfo.index === 4) {//Dragon success
-      setStoryInfo({text: "There's the king!", index: 5});
+      setStoryInfo({text: "You need to defeat the king in a rap battle.", index: 5});
     } else if (storyInfo.index === 5 || storyInfo.index === 6) {//King intro or King fail
       navigate('/rhyme');
     } else if (storyInfo.index === 7) {//Rhyme success
-      setStoryInfo({text: "Wizard intro", index: 8});
+      setStoryInfo({text: "The wizard needs help to cast his spell!", index: 8});
     } else if (storyInfo.index === 8 || storyInfo.index === 9) {//Wizard intro or Wizard fail
       navigate('/anagram');
     } else if (storyInfo.index === 10) {//Wizard Success
       setStoryInfo({text: "The game has been completed", index: 11});
-    } else if (storyInfo.index === 10) {
+    } else if (storyInfo.index === 11) {
       navigate('link to next game');
     }
   }
