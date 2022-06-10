@@ -4,20 +4,39 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-extras@6.1.0/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://unpkg.com/three@0.124.0/examples/js/libs/inflate.min.js"></script>
-    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+    <!-- <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script> -->
 
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script>
+      AFRAME.registerComponent("click-listener", {
+        init: function () {
+          const el = this.el;
+          el.addEventListener("click", function (evt) {
+            el.setAttribute("value", window.localStorage[2]);
+          });
+        },
+      });
+    </script>
   </head>
 
   <body>
     <script src="./script/script.js"></script>
 
     <a-scene cursor="rayOrigin:mouse">
-      <a-entity htmlembed position="3 2 -5.8" bag id="myText">
+      <a-troika-text
+      click-listener
+      value="Hello!"
+      material="shader: standard; metalness: 0.8;"
+      position="0 2ww -2"
+    ><ul id="bag">
+      <h1>Your bag:</h1>
+    </ul></a-troika-text>
+      <!-- <a-entity htmlembed position="3 2 -5.8" bag id="myText">
         <ul id="bag">
           <h1>Your bag:</h1>
         </ul>
-      </a-entity>
+      </a-entity> -->
       <!--First-->
       <a-gltf-model
         src="./assets/Sofa1.glb"
@@ -428,7 +447,32 @@
         src="./assets/floor.jpg"
       ></a-plane>
       <a-sky color="#fcf"></a-sky>
-      <script src="./script/bag.js"></script>
+      <script>
+        function createBag() {
+          const li = document.createElement("li");
+          console.log("ul", localStorage);
+          const createdBag = Object.values(window.localStorage);
+          console.log("createdBag", createdBag);
+        
+          for (let i = 0; i < createdBag.length; i++) {
+            const li = document.createElement("li");
+            let p = document.createElement("p");
+            let list = document.getElementById("bag").appendChild(li).appendChild(p);
+        
+            createdBag.forEach((item, i) => {
+              console.log(item, "item");
+              createdBag.includes("coffee") ? createList() : console.log("empty");
+              console.log(createdBag);
+            });
+            function createList() {
+              // p.textContent = createdBag[i];
+              p.innerText = createdBag[i];
+            }
+            console.log(createdBag);
+          }
+        }
+      createBag();
+      </script>
     </a-scene>
   </body>
 </html>

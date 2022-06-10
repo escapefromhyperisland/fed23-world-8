@@ -1,6 +1,6 @@
 let localSt = window.localStorage;
 let bag = ["coffee"];
-
+localSt.clear();
 //clear local storage
 AFRAME.registerComponent("storage", {
   schema: { default: "" },
