@@ -1,3 +1,6 @@
-# fed23-world-8
+# The Mad Scientist in Ville de Crap
 
-This is the top level repo. Don't install any dependencies here or run create react app, npm init etc. Install them in your personal subrepo instead.
+To start the game:
+Download the folder and open index.html in your browser
+
+A game made with bitsy.
